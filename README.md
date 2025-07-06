@@ -2,71 +2,55 @@
 
 # Wokwi Medibox Simulation Project
 
-This project is a simulation of a smart medicine box (Medibox) implemented on an ESP32 using the Wokwi platform. It combines sensor data acquisition, MQTT communication, an OLED display, servo control, and alarm functionality to remind users about their medication schedules.
+This project simulates a smart medicine box (Medibox) running on an ESP32 platform. It helps users manage their medication schedules effectively by combining sensor monitoring, real-time alerts, and remote control capabilities.
 
-## Features
+## Medibox Functionality
 
-- Reads temperature and humidity using DHT22 sensor.
-- Measures ambient light intensity with LDR sensor and controls a servo motor accordingly.
-- Displays current time, temperature, humidity, and alarm settings on an OLED screen.
-- Connects to WiFi and communicates via MQTT protocol.
-- Allows integration with **Node-RED** for real-time monitoring and control via MQTT topics.
-- Allows setting multiple alarms with snooze and cancel options.
-- Interactive menu controlled via push buttons.
-- Configurable time zone and alarm times.
-- Audible buzzer alarm with musical notes.
-- Visual LED indicators for alerts.
+- The Medibox continuously measures temperature and humidity using a DHT22 sensor to ensure medicine storage conditions are optimal.
+- It monitors ambient light intensity with an LDR sensor and controls a servo motor that can adjust a physical component based on light levels.
+- The device displays current time, temperature, humidity, and alarm settings on an OLED screen for easy user interaction.
+- Multiple alarms can be set for medication times with snooze and cancel options, accompanied by buzzer sounds and LED indicators.
+- The system allows users to configure time zone, alarm times, and other settings through push buttons and an intuitive menu interface.
+
+## Key Features
+
+- **Sensor Monitoring:** Accurate temperature, humidity, and light sensing to maintain optimal medicine storage conditions.
+- **Alarm System:** Configurable alarms with audible buzzer and visual LED alerts, including snooze functionality.
+- **OLED Display Interface:** Real-time display of time, sensor readings, and alarm statuses.
+- **User Interaction:** Easy navigation and configuration using push buttons.
+- **WiFi Connectivity and MQTT Communication:**  
+  The Medibox connects to WiFi and publishes sensor data to MQTT topics, enabling remote monitoring and control.
+- **Node-RED Integration:**  
+  Seamless integration with Node-RED allows users to visualize sensor data, receive alerts, and adjust device parameters remotely by subscribing and publishing to MQTT topics. This feature extends the Medibox functionality beyond the physical device and provides a user-friendly dashboard for management.
 
 ## Hardware Components
 
-- ESP32 Development Board
-- DHT22 Temperature and Humidity Sensor
-- LDR (Light Dependent Resistor)
-- Servo Motor
-- OLED Display (SSD1306)
-- Buzzer
-- Push Buttons (Cancel, OK, Up, Down, Snooze)
-- LEDs
+- ESP32 Development Board  
+- DHT22 Temperature and Humidity Sensor  
+- LDR (Light Dependent Resistor)  
+- Servo Motor  
+- OLED Display (SSD1306)  
+- Buzzer  
+- Push Buttons (Cancel, OK, Up, Down, Snooze)  
+- LEDs  
 
 ## Libraries Used
 
-- Wire
-- WiFi
-- time
-- Adafruit_GFX
-- Adafruit_SSD1306
-- DHTesp
-- PubSubClient
-- ESP32Servo
+- Wire  
+- WiFi  
+- time  
+- Adafruit_GFX  
+- Adafruit_SSD1306  
+- DHTesp  
+- PubSubClient  
+- ESP32Servo  
 
 ## How to Use
 
-1. Connect the hardware components according to the defined pins in the code.
-2. Upload the code to your ESP32 device.
-3. Ensure the ESP32 is connected to a WiFi network named `"Wokwi-GUEST"` (or modify SSID in code).
-4. Use the push buttons to navigate the menu, set the time zone, and configure alarms.
-5. The device reads sensor data periodically and publishes temperature and light intensity data via MQTT.
-6. Use **Node-RED** to subscribe to MQTT topics (e.g., `ADMIN-TEMP`, `ADMIN-LIGHT-AVG`, `MEDIBOX/motor_angle`) for real-time visualization and control.
-7. When an alarm time is reached, the buzzer and LED notify the user.
-
-## MQTT Topics Used
-
-| Topic                   | Description                            |
-|-------------------------|------------------------------------|
-| `ADMIN-TEMP`            | Publishes current temperature data  |
-| `ADMIN-LIGHT-AVG`       | Publishes average light sensor value |
-| `MEDIBOX/motor_angle`   | Publishes servo motor angle          |
-| `ADMIN-ts`              | Subscribe to update light sample time interval (`ts`) |
-| `ADMIN-tu`              | Subscribe to update light averaging time interval (`tu`) |
-| `MEDIBOX/theta_offset`  | Subscribe to update servo angle offset |
-| `MEDIBOX/gamma`         | Subscribe to update gamma parameter  |
-| `MEDIBOX/Tmed`          | Subscribe to update median temperature parameter |
-
-## Notes
-
-- Modify WiFi credentials in the code if needed.
-- MQTT broker is set to `broker.hivemq.com`.
-- Time synchronization is done via NTP (`pool.ntp.org`).
-- Adjust sensor pins and settings in the code as per your hardware setup.
-- To use Node-RED, create MQTT input nodes to listen on the topics above for dashboard visualization or custom actions.
-
+1. Assemble hardware components as per the code pin assignments.  
+2. Upload the code to your ESP32 device.  
+3. Connect the device to your WiFi network (default SSID: `"Wokwi-GUEST"`).  
+4. Use push buttons to set time zone, alarms, and other parameters.  
+5. Sensor data is published periodically over MQTT to topics such as `ADMIN-TEMP` and `ADMIN-LIGHT-AVG`.  
+6. Use Node-RED to subscribe to these MQTT topics to monitor sensor readings and control device parameters remotely.  
+7. Alarms notify the user via buzzer and LED indicators at scheduled times.
