@@ -1,0 +1,839 @@
+[
+    {
+        "id": "142b3420c10741e1",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6b2cc04bb60d8e17",
+        "type": "group",
+        "z": "142b3420c10741e1",
+        "name": "Get the motor angle parameters",
+        "style": {
+            "stroke": "#000000",
+            "label": true
+        },
+        "nodes": [
+            "914324f425b58ae6",
+            "b01b71aa0d78ff83",
+            "57c09aceab64ef97",
+            "f00bda6f069f9125",
+            "4cf6daa89235007e",
+            "2f98fc4318ade265",
+            "297f316394f16560",
+            "0bd9a4da255ecb3b",
+            "d7bf74494085d377"
+        ],
+        "x": 194,
+        "y": 559,
+        "w": 912,
+        "h": 162
+    },
+    {
+        "id": "95c579ab28f19aa0",
+        "type": "group",
+        "z": "142b3420c10741e1",
+        "name": "Showing Angle",
+        "style": {
+            "stroke": "#000000",
+            "label": true
+        },
+        "nodes": [
+            "32454ecb9e2c4269",
+            "c64a2b1a0adcb48e"
+        ],
+        "x": 894,
+        "y": 419,
+        "w": 532,
+        "h": 82
+    },
+    {
+        "id": "6626fb03db3d3f5e",
+        "type": "group",
+        "z": "142b3420c10741e1",
+        "name": "Showing the light intensity",
+        "style": {
+            "label": true,
+            "stroke": "#000000"
+        },
+        "nodes": [
+            "632d2495975c34a5",
+            "292bb6a60eeae82d",
+            "6c14f4b9b3d0710d"
+        ],
+        "x": 714,
+        "y": 259,
+        "w": 592,
+        "h": 142
+    },
+    {
+        "id": "f2c8241176ec3b8b",
+        "type": "group",
+        "z": "142b3420c10741e1",
+        "name": "Showing the temperature",
+        "style": {
+            "stroke": "#000000",
+            "label": true
+        },
+        "nodes": [
+            "105912a29d953563",
+            "218cbab4395addcb",
+            "ca9744bc0a911f98"
+        ],
+        "x": 194,
+        "y": 239,
+        "w": 492,
+        "h": 162
+    },
+    {
+        "id": "cf4392133d0c0b72",
+        "type": "group",
+        "z": "142b3420c10741e1",
+        "name": "Get the time parameters",
+        "style": {
+            "stroke": "#000000",
+            "label": true
+        },
+        "nodes": [
+            "a2d70b769729364d",
+            "55c300cf832dd125",
+            "1f5f7a3cdb12fd90",
+            "329fa0ebecf1ad87",
+            "b8bfa3d0317d5e55",
+            "3536dd8ee897d1b7"
+        ],
+        "x": 194,
+        "y": 419,
+        "w": 672,
+        "h": 122
+    },
+    {
+        "id": "105912a29d953563",
+        "type": "mqtt in",
+        "z": "142b3420c10741e1",
+        "g": "f2c8241176ec3b8b",
+        "name": "",
+        "topic": "ADMIN-TEMP",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4284874271f316b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "218cbab4395addcb",
+                "ca9744bc0a911f98"
+            ]
+        ]
+    },
+    {
+        "id": "218cbab4395addcb",
+        "type": "ui_gauge",
+        "z": "142b3420c10741e1",
+        "g": "f2c8241176ec3b8b",
+        "name": "",
+        "group": "833393bfcdee4b69",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "Temperature (°C)",
+        "format": "{{payload}}",
+        "min": "-40",
+        "max": "40",
+        "colors": [
+            "#398af3",
+            "#e6e600",
+            "#e25222"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": true,
+        "className": "",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ca9744bc0a911f98",
+        "type": "ui_chart",
+        "z": "142b3420c10741e1",
+        "g": "f2c8241176ec3b8b",
+        "name": "",
+        "group": "833393bfcdee4b69",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature Over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-40",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#32816c",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2d70b769729364d",
+        "type": "ui_slider",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "Sampling Time (ts)",
+        "label": "Sampling Interval (ts) [s]",
+        "tooltip": "",
+        "group": "b324fc72ef49d4cc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "className": "",
+        "x": 510,
+        "y": 460,
+        "wires": [
+            [
+                "b8bfa3d0317d5e55"
+            ]
+        ]
+    },
+    {
+        "id": "55c300cf832dd125",
+        "type": "ui_slider",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "Sending Time (tu)",
+        "label": "Sending Interval (tu) [min]",
+        "tooltip": "",
+        "group": "b324fc72ef49d4cc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": "1",
+        "max": "100",
+        "step": "1",
+        "className": "",
+        "x": 510,
+        "y": 500,
+        "wires": [
+            [
+                "3536dd8ee897d1b7"
+            ]
+        ],
+        "info": "hmdmnmhd"
+    },
+    {
+        "id": "632d2495975c34a5",
+        "type": "mqtt in",
+        "z": "142b3420c10741e1",
+        "g": "6626fb03db3d3f5e",
+        "name": "LDR Light Value",
+        "topic": "ADMIN-LIGHT-AVG",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "4284874271f316b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 820,
+        "y": 300,
+        "wires": [
+            [
+                "292bb6a60eeae82d",
+                "6c14f4b9b3d0710d"
+            ]
+        ]
+    },
+    {
+        "id": "292bb6a60eeae82d",
+        "type": "ui_gauge",
+        "z": "142b3420c10741e1",
+        "g": "6626fb03db3d3f5e",
+        "name": "Light Intensity",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Light Intensity",
+        "label": "Ambient Light Level (Normalized)",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 1,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1180,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6c14f4b9b3d0710d",
+        "type": "ui_chart",
+        "z": "142b3420c10741e1",
+        "g": "6626fb03db3d3f5e",
+        "name": "Light Intensity Chart",
+        "group": "dashboard_group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "label": "Light Intensity Over Time",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Waiting for data...",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#328180",
+            "#00ccff",
+            "#ff66cc",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1180,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f5f7a3cdb12fd90",
+        "type": "inject",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 290,
+        "y": 460,
+        "wires": [
+            [
+                "a2d70b769729364d"
+            ]
+        ]
+    },
+    {
+        "id": "329fa0ebecf1ad87",
+        "type": "inject",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 290,
+        "y": 500,
+        "wires": [
+            [
+                "55c300cf832dd125"
+            ]
+        ]
+    },
+    {
+        "id": "914324f425b58ae6",
+        "type": "ui_slider",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Minimum Angle (θoffset)",
+        "label": "Min Angle θoffset (°)",
+        "tooltip": "",
+        "group": "7c381f52ccdebbae",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "theta_offset",
+        "topicType": "str",
+        "min": 0,
+        "max": 120,
+        "step": 1,
+        "className": "",
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "d7bf74494085d377"
+            ]
+        ]
+    },
+    {
+        "id": "b01b71aa0d78ff83",
+        "type": "ui_slider",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Controlling Factor (γ)",
+        "label": "Control Factor γ",
+        "tooltip": "",
+        "group": "7c381f52ccdebbae",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "gamma",
+        "topicType": "str",
+        "min": 0,
+        "max": 1,
+        "step": 0.01,
+        "className": "",
+        "x": 540,
+        "y": 640,
+        "wires": [
+            [
+                "0bd9a4da255ecb3b"
+            ]
+        ]
+    },
+    {
+        "id": "57c09aceab64ef97",
+        "type": "ui_slider",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Ideal Storage Temp (Tmed)",
+        "label": "Ideal Temp Tmed (°C)",
+        "tooltip": "",
+        "group": "7c381f52ccdebbae",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "T_med",
+        "topicType": "str",
+        "min": 10,
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 530,
+        "y": 680,
+        "wires": [
+            [
+                "297f316394f16560"
+            ]
+        ]
+    },
+    {
+        "id": "32454ecb9e2c4269",
+        "type": "ui_text",
+        "z": "142b3420c10741e1",
+        "g": "95c579ab28f19aa0",
+        "group": "group2",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "Motor Angle Display",
+        "label": "Current Motor Angle (°)",
+        "format": "{{msg.payload}}°",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1300,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f00bda6f069f9125",
+        "type": "inject",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "30",
+        "payloadType": "num",
+        "x": 290,
+        "y": 600,
+        "wires": [
+            [
+                "914324f425b58ae6"
+            ]
+        ]
+    },
+    {
+        "id": "4cf6daa89235007e",
+        "type": "inject",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0.75",
+        "payloadType": "num",
+        "x": 290,
+        "y": 640,
+        "wires": [
+            [
+                "b01b71aa0d78ff83"
+            ]
+        ]
+    },
+    {
+        "id": "2f98fc4318ade265",
+        "type": "inject",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "30.0",
+        "payloadType": "num",
+        "x": 290,
+        "y": 680,
+        "wires": [
+            [
+                "57c09aceab64ef97"
+            ]
+        ]
+    },
+    {
+        "id": "297f316394f16560",
+        "type": "mqtt out",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Publish Tmed",
+        "topic": "MEDIBOX/Tmed",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4284874271f316b3",
+        "x": 1000,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0bd9a4da255ecb3b",
+        "type": "mqtt out",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Publish γ",
+        "topic": "MEDIBOX/gamma",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4284874271f316b3",
+        "x": 980,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "d7bf74494085d377",
+        "type": "mqtt out",
+        "z": "142b3420c10741e1",
+        "g": "6b2cc04bb60d8e17",
+        "name": "Publish θoffset",
+        "topic": "MEDIBOX/theta_offset",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4284874271f316b3",
+        "x": 1000,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c64a2b1a0adcb48e",
+        "type": "mqtt in",
+        "z": "142b3420c10741e1",
+        "g": "95c579ab28f19aa0",
+        "name": "",
+        "topic": "MEDIBOX/motor_angle",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4284874271f316b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            [
+                "32454ecb9e2c4269"
+            ]
+        ]
+    },
+    {
+        "id": "b8bfa3d0317d5e55",
+        "type": "mqtt out",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "publish ts",
+        "topic": "ADMIN-ts",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4284874271f316b3",
+        "x": 780,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "3536dd8ee897d1b7",
+        "type": "mqtt out",
+        "z": "142b3420c10741e1",
+        "g": "cf4392133d0c0b72",
+        "name": "Publish tu",
+        "topic": "ADMIN-tu",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4284874271f316b3",
+        "x": 760,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4284874271f316b3",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "833393bfcdee4b69",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "39de5524a5b1d8eb",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b324fc72ef49d4cc",
+        "type": "ui_group",
+        "name": "Timing Control",
+        "tab": "bc5b22f7485e3a0f",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Light Intensity",
+        "tab": "39de5524a5b1d8eb",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7c381f52ccdebbae",
+        "type": "ui_group",
+        "name": "Motor Control Parameters",
+        "tab": "bc5b22f7485e3a0f",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "group2",
+        "type": "ui_group",
+        "name": "Motor Angle Output",
+        "tab": "39de5524a5b1d8eb",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "39de5524a5b1d8eb",
+        "type": "ui_tab",
+        "name": "Medibox",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bc5b22f7485e3a0f",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
