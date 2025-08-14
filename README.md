@@ -2,6 +2,8 @@
 
 This project simulates a smart medicine box (Medibox) running on an ESP32 platform. It helps users manage their medication schedules effectively by combining sensor monitoring, real-time alerts, and remote control capabilities.
 
+<img width="869" height="433" alt="$R1OL8YT" src="https://github.com/user-attachments/assets/5397c5ff-9ce3-4eca-b64f-b56d2fa03a51" />
+
 ## Medibox Functionality
 
 - The Medibox continuously measures temperature and humidity using a DHT22 sensor to ensure medicine storage conditions are optimal.
