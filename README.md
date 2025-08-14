@@ -47,7 +47,7 @@ This project simulates a smart medicine box (Medibox) running on an ESP32 platfo
 
 1. Assemble hardware components as per the code pin assignments.  
 2. Upload the code to your ESP32 device.  
-3. Connect the device to your WiFi network.  
+3. Connect the device to your WiFi network(default SSID: `"Wokwi-GUEST"`).  
 4. Use push buttons to set time zone, alarms, and other parameters.  
 5. Sensor data is published periodically over MQTT to topics such as `ADMIN-TEMP` and `ADMIN-LIGHT-AVG`.  
 6. Use Node-RED to subscribe to these MQTT topics to monitor sensor readings and control device parameters remotely.  
