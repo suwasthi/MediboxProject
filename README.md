@@ -1,6 +1,6 @@
 # Wokwi Medibox Project
 
-This project simulates a smart medicine box (Medibox) running on an ESP32 platform. It helps users manage their medication schedules effectively by combining sensor monitoring, real-time alerts, and remote control capabilities.
+This project simulates a Smart Medicine Box (Medibox) using the ESP32 platform. It assists users in managing their medication schedules efficiently through sensor monitoring, real-time alerts, and remote control features.
 
 <img width="869" height="433" alt="$R1OL8YT" src="https://github.com/user-attachments/assets/5397c5ff-9ce3-4eca-b64f-b56d2fa03a51" />
 
