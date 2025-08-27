@@ -43,7 +43,7 @@ This project simulates a Smart Medicine Box (Medibox) using the ESP32 platform. 
 - Adafruit_SSD1306  
 - DHTesp  
 - PubSubClient  
-- ESP32Servo  
+
 
 ## How to Use
 
